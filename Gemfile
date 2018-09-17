@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave-aws'
 gem 'aws-sdk'
 gem 'figaro'
+gem "mini_magick"
 # gem 'carrierwave'
 # gem 'fog'
 # Use ActiveStorage variant
