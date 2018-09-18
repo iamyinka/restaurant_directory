@@ -1,25 +1,39 @@
-<%= image_tag @restaurant.image_url %>
+<div class="row">
+  <div class="col-sm-4">
+    <%= image_tag @restaurant.image_url %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @restaurant.name %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @restaurant.address %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @restaurant.phone %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @restaurant.website %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= @restaurant.website %>
+    </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
-<%= link_to 'Back', restaurants_path, class: "btn btn-link" %> |
-<%= link_to "Leave Review", new_restaurant_review_path(@restaurant), class: "btn btn-link" %>
+    <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
+    <%= link_to 'Back', restaurants_path, class: "btn btn-link" %> |
+    <%= link_to "Leave Review", new_restaurant_review_path(@restaurant), class: "btn btn-link" %>
+  </div>
+  <div class="col-sm-8">
+    <% if @restaurant_reviews.blank? %>
+      <p>There are currently no review for this restaurant</p>
+    <% else %>
+      <% @restaurant_reviews.each do |restaurant_review| %>
+        <p><%= restaurant_review.rating %></p>
+        <p><%= restaurant_review.comment %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
