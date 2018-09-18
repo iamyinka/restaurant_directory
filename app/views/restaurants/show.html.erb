@@ -31,7 +31,9 @@
       <p>There are currently no review for this restaurant</p>
     <% else %>
       <% @restaurant_reviews.each do |restaurant_review| %>
-        <p><%= restaurant_review.rating %></p>
+        <div class="star-rating" data-score=<%= restaurant_review.rating %> >
+          <!-- <p><%= restaurant_review.rating %></p> -->
+        </div>
         <p><%= restaurant_review.comment %></p>
       <% end %>
     <% end %>

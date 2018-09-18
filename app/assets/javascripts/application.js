@@ -14,3 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+<script>
+  $('.star-rating').raty(
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    { path: 'https://s3-us-west-2.amazonaws.com/awsrestaurant/star-ratings/' },
+
+  );
+</script>

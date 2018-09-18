@@ -2,3 +2,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raty/2.8.0/jquery.raty.min.js"></script>
+
+<script>
+  $('.star-rating').raty(
+    {
+      path: 'https://s3-us-west-2.amazonaws.com/awsrestaurant/star-ratings/',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      },
+    }
+  );
+</script>
