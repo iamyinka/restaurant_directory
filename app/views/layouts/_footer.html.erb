@@ -9,9 +9,10 @@
     {
       path: 'https://s3-us-west-2.amazonaws.com/awsrestaurant/star-ratings/',
       readOnly: true,
+      half : true,
       score: function() {
         return $(this).attr('data-score');
-      },
+      }
     }
   );
 </script>
